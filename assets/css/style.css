@@ -67,13 +67,16 @@ hr {
 
 .favorable {
     color: green;
+    background-color: black;
 }
 
 .moderate {
     color: yellow;
+    background-color: black;
 }
 
 .severe {
     color: red;
+    background-color: black;
 }
 

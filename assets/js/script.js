@@ -37,7 +37,6 @@ var input = document.querySelector("#cityNameInput");
 var apiKey = "319dbfef577511a19ac29b9e7b392643";
 var uvInfo = document.querySelector("uvInfo");
 
-
 // Grab city name from input and create an event listener for the search button
 function returnCityInfo(event) {
   event.preventDefault();
@@ -86,6 +85,13 @@ function renderCurrentWeather(data) {
     .then(function (data) {
       console.log(data);
       uvInfo.textContent = "UV Index: " + data.value;
+      if (data.value < 2) {
+        uvInfo.classList.add("favorable");
+      } else if (data.value > 2 && data.value < 8) {
+        uvInfo.classList.add("moderate");
+      } else {
+        uvInfo.classList.add("severe");
+      }
     });
 }
 
@@ -110,13 +116,13 @@ function renderFivedayForecast(data) {
   //     document.querySelector("#");
 }
 
-if (uvInfo < 2) {
-  uvInfo.classList.add("favorable");
-} else if (uvInfo (between(x, 2, 8)) {
-  uvInfo.classList.add("moderate");
-} else if (uvInfo > 8) {
-  uvInfo.classList.add("severe");
-}
+// if (uvInfo < 2) {
+//   uvInfo.classList.add("favorable");
+// } else if (uvInfo (between(x, 2, 8)) {
+//   uvInfo.classList.add("moderate");
+// } else if (uvInfo > 8) {
+//   uvInfo.classList.add("severe");
+// }
 
 form.addEventListener("submit", returnCityInfo);
 
