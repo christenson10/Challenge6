@@ -64,3 +64,16 @@ hr {
 .fiveDayTitle {
     grid-column-start: 5;
 }
+
+.favorable {
+    color: green;
+}
+
+.moderate {
+    color: yellow;
+}
+
+.severe {
+    color: red;
+}
+
