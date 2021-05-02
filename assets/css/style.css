@@ -4,3 +4,63 @@ body {
     padding: 15%;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: max-content(2, 1fr);
+    gap: 8px;
+    height: 100%;
+}
+
+header {
+    background: lightblue;
+    padding: 8px 0;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    border-radius: 4px;
+    grid-column-start: 2;
+}
+
+.city-search {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    grid-row-start: 2;
+}
+
+hr {
+    border-color: black;
+    width: 100%;
+    gap: 8px;
+}
+
+.currentWeather, .dayOne, .dayTwo, .dayThree, .dayFour, .dayFive {
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 8px;
+}
+
+.fiveDayForecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: max-content 1fr;
+    grid-column-gap: 20px;
+}
+
+.dayOne, .dayTwo, .dayThree, .dayFour, .dayFive {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+}
+
+.fiveDayTitle {
+    grid-column-start: 5;
+}

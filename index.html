@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"/>
-      <link rel="stylesheet" href="assets\css\style.css"/>
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
+
   <body>
     <main>
       <h1>Weather Dashboard</h1>
@@ -20,7 +24,17 @@
         <h2>Search for a City:</h2>
         <input type="text" placeholder="Enter City" name="search" />
         <button type="button class" class="btn btn-primary">Search</button>
+       
         <!-- <div>Saved Storage Cities</div> -->
+
+        <button type="button" class="btn btn-secondary">Detroit</button>
+        <button type="button" class="btn btn-secondary">Flint</button>
+        <button type="button" class="btn btn-secondary">Marquette</button>
+        <button type="button" class="btn btn-secondary">Seattle</button>
+        <button type="button" class="btn btn-secondary">Portland</button>
+        <button type="button" class="btn btn-secondary">Austin</button>
+        <button type="button" class="btn btn-secondary">Boston</button>
+        <button type="button" class="btn btn-secondary">San Francisco</button>
       </div>
 
       <!-- Current Temp Div -->
@@ -34,49 +48,61 @@
 
       <!-- Five Day Forecast Div-->
       <div class="fiveDayForecast">
-        <h2>Five Day Forecast</h2>
+        <h2 class="fiveDayTitle">Five Day Forecast</h2>
 
-        <div class="dayOne">
-          <h5>Day</h5>
+        <div class="dayOne" id="one">
+          <h5></h5>
           <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
 
-        <div class="dayTwo">
-          <h5>Day</h5>
-          <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
+        <div class="dayTwo" id="two">
+          <h5></h5>
+          <p></p>
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
 
-        <div class="dayThree">
-          <h5>Day</h5>
-          <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
+        <div class="dayThree" id="three">
+          <h5></h5>
+          <p></p>
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
 
-        <div class="dayFour">
-          <h5>Day</h5>
-          <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
+        <div class="dayFour" id="four">
+          <h5></h5>
+          <p></p>
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
 
-        <div class="dayFive">
-          <h5>Day</h5>
-          <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
+        <div class="dayFive" id="five">
+          <h5></h5>
+          <p></p>
           <p>Temp:</p>
           <p>Wind:</p>
           <p>Humidity:</p>
         </div>
       </div>
     </main>
-    <script src="assets\js\script.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
