@@ -56,6 +56,9 @@ function renderCurrentWeather(data) {
     .then(function (response) {
       return response.json();
     })
+
+    //If/else to update color of UV index
+
     .then(function (data) {
       console.log(data);
       uvInfo.textContent = "UV Index: " + data.value;
@@ -69,6 +72,7 @@ function renderCurrentWeather(data) {
     });
 }
 
+//Get 5 days of weather info
 function renderFivedayForecast(data) {
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&appid=${apiKey}&units=imperial`
@@ -80,6 +84,8 @@ function renderFivedayForecast(data) {
       console.log(data);
       for (let i = 1; i < 6; i++) {
         let divId = $("div#" + i);
+
+//Appending information to cards
 
         divId.children()[0].innerHTML = data.list[i * 8 - 1].dt_txt.split(" ")[0];
         divId.children()[1].setAttribute("src", `https://openweathermap.org/img/w/${data.list[i * 8 - 1].weather[0].icon}.png`); 
