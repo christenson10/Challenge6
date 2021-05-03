@@ -19,7 +19,7 @@ header {
     color: white;
     font-size: 28px;
     border-radius: 4px;
-    grid-column-start: 2;
+    grid-column-start: span 5;
 }
 
 .city-search {
@@ -47,7 +47,7 @@ hr {
     padding-left: 8px;
 }
 
-.fiveDayForecast {
+.fiveDay {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: max-content 1fr;
@@ -62,7 +62,7 @@ hr {
 }
 
 .fiveDayTitle {
-    grid-column-start: 5;
+    grid-column-start: span 5;
 }
 
 .favorable {

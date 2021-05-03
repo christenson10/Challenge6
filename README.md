@@ -29,4 +29,4 @@ https://christenson10.github.io/Challenge6/
 
 ## Pictures
 
-![Screenshot1](WeatherScreenshot.jpg)
+![Screenshot1](Challenge6Screenshot.jpg)

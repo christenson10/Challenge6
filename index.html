@@ -27,21 +27,12 @@
 
           <button type="button class" class="btn btn-primary">Search</button>
         </form>
-        <!-- <div>Saved Storage Cities</div> -->
-
-        <button type="button" class="btn btn-secondary">Detroit</button>
-        <button type="button" class="btn btn-secondary">Flint</button>
-        <button type="button" class="btn btn-secondary">Marquette</button>
-        <button type="button" class="btn btn-secondary">Seattle</button>
-        <button type="button" class="btn btn-secondary">Portland</button>
-        <button type="button" class="btn btn-secondary">Austin</button>
-        <button type="button" class="btn btn-secondary">Boston</button>
-        <button type="button" class="btn btn-secondary">San Francisco</button>
       </div>
 
       <!-- Current Temp Div -->
       <div class="currentWeather">
         <h2 id="cityHeader"></h2>
+        <img class="weatherIcons" id="topIcon"/>
         <h5 id="cityTemp"></h5>
         <h5 id="cityWind"></h5>
         <h5 id="cityHumid"></h5>
@@ -49,12 +40,11 @@
       </div>
 
       <!-- Five Day Forecast Div-->
-      <div>
-        <h2 class="fiveDayTitle">Five Day Forecast</h2>
-        <div class="fiveDayForecast">
-          <div class="dayOne" id="1">
+      <div class="fiveDay">
+      <h2 class="fiveDayTitle">Five Day Forecast</h2>
+            <div class="dayOne" id="1">
             <h5></h5>
-            <!-- <div class="weather-icon"><img src="icons/unknown.png" /></div> -->
+            <img class="weatherIcons"/>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>
@@ -62,7 +52,7 @@
 
           <div class="dayTwo" id="2">
             <h5></h5>
-            <p></p>
+            <img class="weatherIcons"/>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>
@@ -70,7 +60,7 @@
 
           <div class="dayThree" id="3">
             <h5></h5>
-            <p></p>
+            <img class="weatherIcons"/>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>
@@ -78,7 +68,7 @@
 
           <div class="dayFour" id="4">
             <h5></h5>
-            <p></p>
+            <img class="weatherIcons"/>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>
@@ -86,14 +76,13 @@
 
           <div class="dayFive" id="5">
             <h5></h5>
-            <p></p>
+            <img class="weatherIcons"/>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
 
     <script src="./assets/js/script.js"></script>
 

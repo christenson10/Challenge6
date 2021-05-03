@@ -1,41 +1,7 @@
-// var form = document.querySelector("#cityName");
-// var input = document.querySelector("#cityNameInput");
-// var apiKey = ""
-
-// function returnCityInfo(event) {
-//     event.preventDefaul();
-// }
-
-// function getCurrentWeather() {
-// }
-
-// function renderCurrentWeather(data) {
-//     var cityTemp = document.querySelector("#cityTemp");
-//     var cityWind
-//     var cityHumid
-//     var cityHeader
-//     var uvInfo
-
-//     cityTemp.textContent = "Temp: " + data.main.temp;
-//     cityWind.textContent = "Temp: "
-//     cityTemp.textContent = "Temp: "
-//     cityTemp.textContent = "Temp: "
-//     cityTemp.textContent = "Temp: "
-// }
-
-// function renderFivedayForecast(data) {
-//     fetch(api)
-//     .then(function (response) {
-
-//     })
-// }
-
-// data index * 8 for "for loop"
 
 var form = document.querySelector("#cityName");
 var input = document.querySelector("#cityNameInput");
 var apiKey = "319dbfef577511a19ac29b9e7b392643";
-var uvInfo = document.querySelector("uvInfo");
 
 // Grab city name from input and create an event listener for the search button
 function returnCityInfo(event) {
@@ -47,7 +13,7 @@ function returnCityInfo(event) {
 }
 
 function getCurrentWeather() {
-  // var currentUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`
   )
@@ -66,13 +32,21 @@ function renderCurrentWeather(data) {
   var cityHumid = document.querySelector("#cityHumid");
   var cityHeader = document.querySelector("#cityHeader");
   var uvInfo = document.querySelector("#uvInfo");
+  var weatherIcon = document.querySelector("#topIcon");
+
+
   cityTemp.textContent = "Temp: " + data.main.temp;
   cityWind.textContent = "Wind: " + data.wind.speed + " MPH";
   cityHumid.textContent = "Humidity: " + data.main.humidity + "%";
   console.log(data);
   cityHeader.textContent = data.name + " - " + moment().format("MMMM Do YYYY");
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+  weatherIcon.setAttribute("style", "display: initial");
+  weatherIcon.setAttribute("height", "50px");
+  weatherIcon.setAttribute("width", "50px");
+
   fetch(
-    "https://api.openweathermap.org/data/2.5/uvi?lat=" +
+      "https://api.openweathermap.org/data/2.5/uvi?lat=" +
       data.coord.lat +
       "&lon=" +
       data.coord.lon +
@@ -106,54 +80,17 @@ function renderFivedayForecast(data) {
       console.log(data);
       for (let i = 1; i < 6; i++) {
         let divId = $("div#" + i);
-        divId.children()[0].innerHTML = data.list[i * 8 - 1].dt_txt.split(
-          " "
-        )[0];
-        divId.children()[1].innerHTML = data.list[i * 8 - 1].weather.icon;
-        // divID.children()
+
+        divId.children()[0].innerHTML = data.list[i * 8 - 1].dt_txt.split(" ")[0];
+        divId.children()[1].setAttribute("src", `https://openweathermap.org/img/w/${data.list[i * 8 - 1].weather[0].icon}.png`); 
+        divId.children()[1].setAttribute("style", "display: initial");
+      console.log(data.list[i * 8 - 1].weather[0].icon);
+        divId.children()[2].innerHTML = "Temp: " + data.list[i * 8 - 1].main.temp;
+        divId.children()[3].innerHTML = "Wind: " + data.list[i * 8 - 1].wind.speed + " MPH";
+        divId.children()[4].innerHTML = "Humidity: " + data.list[i * 8 - 1].main.humidity;
       }
+
     });
-  //     document.querySelector("#");
 }
 
-// if (uvInfo < 2) {
-//   uvInfo.classList.add("favorable");
-// } else if (uvInfo (between(x, 2, 8)) {
-//   uvInfo.classList.add("moderate");
-// } else if (uvInfo > 8) {
-//   uvInfo.classList.add("severe");
-// }
-
 form.addEventListener("submit", returnCityInfo);
-
-// OLD:
-// const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid=319dbfef577511a19ac29b9e7b392643"
-
-// function createElements(weatherInfo) {
-//     //Create HTML Elements
-//     const mainWeatherDiv = document.createElement('div')
-//     mainWeatherDiv
-
-//     renderWeatherInfo()
-//     renderForecast()
-// }
-
-// function renderWeatherInfo () {
-//     //Append Element to DOM
-// }
-
-// function renderForecast () {
-//     //Append Element to DOM
-// }
-
-// fetch(queryURL)
-//     .then(response => response.json())
-//     .then(data => {
-//         const weatherInfo = {
-//             currTemp: data.main.temp,
-//             highTemp: data.main.temp_max,
-//             lowTemp: data.main.temp.min
-//         }
-
-//         return weatherInfo
-//     })
